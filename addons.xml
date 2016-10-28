@@ -2,11 +2,11 @@
 <addons>
 <addon
   id="repository.jokerzbox_libreelec_s905"
-  name="JoKeRzBoX's LibreELEC compilations for S905 based devices"
+  name="JoKeRzBoX's LibreELEC extras S905"
   version="1.0.0"
   provider-name="JoKeRzBoX">
 	<extension point="xbmc.addon.repository"
-             name="JoKeRzBoX's LibreELEC compilations for S905 based devices">
+             name="JoKeRzBoX's LibreELEC extras S905">
     <info compressed="false">http://raw.github.com/JoKeRzBoX/JoKeRzBoX_LibreELEC_Repo_S905/master/addons.xml</info>
     <checksum>http://raw.github.com/JoKeRzBoX/JoKeRzBoX_LibreELEC_Repo_S905/master/addons.xml.md5</checksum>
     <datadir zip="true">http://raw.github.com/JoKeRzBoX/JoKeRzBoX_LibreELEC_Repo_S905/master/zips</datadir>
