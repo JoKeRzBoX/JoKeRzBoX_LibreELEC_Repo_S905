@@ -1,0 +1,113 @@
+#!/bin/sh
+
+################################################################################
+#      This file is part of OpenELEC - http://www.openelec.tv
+#      Copyright (C) 2009-2014 Stephan Raue (stephan@openelec.tv)
+#
+#  OpenELEC is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation, either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  OpenELEC is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with OpenELEC.  If not, see <http://www.gnu.org/licenses/>.
+################################################################################
+
+. /etc/profile
+
+oe_setup_addon emulator.tools.retroarch
+
+RETROARCH_CONFIG_DIR="$ADDON_HOME/config"
+RETROARCH_CONFIG_FILE="$RETROARCH_CONFIG_DIR/retroarch.cfg"
+RETROARCH_SAVEFILES_DIR="$ADDON_HOME/savefiles"
+#RETROARCH_SYSTEM_DIR="$ADDON_HOME/system"
+
+chmod a+x $ADDON_DIR/bin/*
+
+if [ ! -f "$RETROARCH_CONFIG_FILE" ]; then
+  mkdir -p "$RETROARCH_CONFIG_DIR"
+  if [ -f "$ADDON_DIR/config/retroarch.cfg" ]; then
+    cp "$ADDON_DIR/config/retroarch.cfg" "$RETROARCH_CONFIG_FILE"
+  fi
+fi
+
+if [ ! -f "$RETROARCH_SAVEFILES_DIR" ]; then
+  mkdir -p "$RETROARCH_SAVEFILES_DIR"
+fi
+
+#if [ ! -f "$RETROARCH_SYSTEM_DIR" ]; then
+#  mkdir -p $RETROARCH_SYSTEM_DIR
+#fi
+
+## Added by JoKeRzBoX Oct-2016:
+#### Handle defaults folders from addon settings: create and set in retroarch.cfg
+RETROARCH_SYSTEM_DIR="/storage/emulators/retroarch/system"
+RETROARCH_SCREENSHOTS_DIR="/storage/emulators/retroarch/screenshots"
+TMPFILE="/tmp/.retroarchtemp$$"
+if [ "$retroarch_system_folder" != "" ]; then
+	RETROARCH_SYSTEM_DIR="$retroarch_system_folder"
+fi
+if [ "$retroarch_screenshots_folder" != "" ]; then
+	RETROARCH_SYSTEM_DIR="$retroarch_screenshots_folder"
+fi
+if [ !-d "$RETROARCH_SYSTEM_DIR" ]; then
+	mkdir -p "$RETROARCH_SYSTEM_DIR"
+fi
+if [ !-d "$RETROARCH_SCREENSHOTS_DIR" ]; then
+	mkdir -p "$RETROARCH_SCREENSHOTS_DIR"
+fi
+sed "s:system_directory[ ]*=.*:system_directory = \"$RETROARCH_SYSTEM_DIR\":" "$RETROARCH_CONFIG_FILE" > "$TMPFILE"
+sed "s:screenshot_directory[ ]*=.*:screenshot_directory = \"$RETROARCH_SCREENSHOTS_DIR\":" "$TMPFILE" > "$RETROARCH_CONFIG_FILE"
+rm -f "$TMPFILE"
+
+if [ "$retroarch_audio_out_rate" != "" ]; then
+	sed "s:audio_out_rate[ ]*=.*:audio_out_rate = \"$retroarch_audio_out_rate\":" "$RETROARCH_CONFIG_FILE" > "$TMPFILE"
+	cp "$TMPFILE" "$RETROARCH_CONFIG_FILE"
+	rm -f "$TMPFILE"
+fi
+
+if [ "$retroarch_audio_driver" != "" ]; then
+        sed "s:audio_driver[ ]*=.*:audio_driver = \"$retroarch_audio_driver\":" "$RETROARCH_CONFIG_FILE" > "$TMPFILE"
+        cp "$TMPFILE" "$RETROARCH_CONFIG_FILE"
+        rm -f "$TMPFILE"
+fi
+
+if [ "$retroarch_video_threaded" != "" ]; then
+	sed "s:video_threaded[ ]*=.*:video_threaded = \"$retroarch_video_threaded\":" "$RETROARCH_CONFIG_FILE" > "$TMPFILE"
+	cp "$TMPFILE" "$RETROARCH_CONFIG_FILE"
+	rm -f "$TMPFILE"
+fi
+
+if [ "$retroarch_rewind_enable" != "" ]; then
+	sed "s:rewind_enable[ ]*=.*:rewind_enable = \"$retroarch_rewind_enable\":" "$RETROARCH_CONFIG_FILE" > "$TMPFILE"
+	cp "$TMPFILE" "$RETROARCH_CONFIG_FILE"
+	rm -f "$TMPFILE"
+fi
+
+if [ "$retroarch_fps_show" != "" ]; then
+	sed "s:fps_show[ ]*=.*:fps_show = \"$retroarch_fps_show\":" "$RETROARCH_CONFIG_FILE" > "$TMPFILE"
+	cp "$TMPFILE" "$RETROARCH_CONFIG_FILE"
+	rm -f "$TMPFILE"
+fi
+
+##
+
+
+
+if [ "$launch_method" -ne 0 ]; then
+	systemctl stop kodi
+	$ADDON_DIR/bin/retroarch -c $RETROARCH_CONFIG_FILE -L $ADDON_DIR/lib/libretro/$1_libretro.so "$2"
+	systemctl start kodi
+else
+	pgrep kodi.bin | xargs kill -SIGSTOP	
+	$ADDON_DIR/bin/retroarch -c $RETROARCH_CONFIG_FILE -L $ADDON_DIR/lib/libretro/$1_libretro.so "$2"
+	pgrep kodi.bin | xargs kill -SIGCONT	
+fi
+
+exit 0
+

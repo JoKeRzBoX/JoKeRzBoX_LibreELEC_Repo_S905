@@ -1,0 +1,8 @@
+[B]Version 7.0.2-j01[/B]
+- Modifications made by JoKeRzBoX:
+  - Added settings to addon so parameters can be modified via Kodi
+  - Updated scripts to apply settings from Kodi to OS and retroarch.cfg
+
+[B]Version 7.0.2[/B]
+- Initial version compiled for LibreElec nd S905 (code from kszaq)
+

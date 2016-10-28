@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<settings>
+	<category label="General">
+		<setting label="How to handle Kodi when launching retroarch" type="lsep" />
+		<setting id="launch_method" label="" type="enum" default="0" values="Pause Kodi process (keeps it in mem) and resumes it after|Stop Kodi process (frees mem) and restart it after" />
+ 
+                <setting  type="lsep" />
+                <setting label="Scripts Permissions (try only if RectroArch does not launch)" type="lsep" />
+		<setting label="Click to fix permissions of scripts to make them executable" type="action" action="RunScript($CWD/makeExecutable.py)" />
+ 	</category>
+        <category label="Configuration">
+
+		<setting label="Common RetroArch config can be set below. USE AT YOUR OWN RISK" type="lsep" />
+
+		<setting  type="lsep" />
+                <setting label="Folder location for RetroArch files (will be created if do not exist)" type="lsep" />
+                <setting id="retroarch_system_folder" label="System files" type="folder" default="/storage/emulators/retroarch/system" option="writeable" />
+                <setting id="retroarch_screenshots_folder" label="Screenshots" type="folder" default="/storage/emulators/retroarch/screenshots" option="writeable" />
+
+                <setting  type="lsep" />
+                <setting label="Audio Settings" type="lsep" />
+                <setting id="retroarch_audio_out_rate" label="Audio Output Sample Rate" type="labelenum" values="48000|44100|22050" default="48000" /> 
+                <setting id="retroarch_audio_driver" label="Audio Driver" type="labelenum" values="alsa|sdl|alsathread" default="alsathread" />
+
+                <setting  type="lsep" />
+                <setting label="Video Settings" type="lsep" />
+                <setting id="retroarch_video_threaded" label="Process video in threads" type="labelenum" values="true|false"  default="true" />
+
+                <setting  type="lsep" />
+                <setting label="Other Settings" type="lsep" />
+                <setting id="retroarch_rewind_enable" label="Game rewind enabled (slows emulation)" type="labelenum" values="false|true" default="false" />
+                <setting id="retroarch_fps_show" label="Show frame per second on screen" type="labelenum" values="false|true" default="false" />
+
+
+        </category>
+
+</settings>
+
+
