@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon 
+  id="repository.jokerzbox_libreelec_s905" 
+  name="JoKeRzBoX's LibreELEC compilations for S905 based devices"
+  version="1.0.0" 
+  provider-name="JoKeRzBoX">
+	<extension point="xbmc.addon.repository" 
+             name="JoKeRzBoX's LibreELEC compilations for S905 based devices">
+    <info compressed="false">http://raw.github.com/JoKeRzBoX/JoKeRzBoX_LibreELEC_Repo_S905/master/addons.xml</info>
+    <checksum>http://raw.github.com/JoKeRzBoX/JoKeRzBoX_LibreELEC_Repo_S905/master/addons.xml.md5</checksum>
+    <datadir zip="true">http://raw.github.com/JoKeRzBoX/JoKeRzBoX_LibreELEC_Repo_S905/master/zips</datadir>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<summary>JoKeRzBoX's LibreELEC compilations for S905 based devices</summary>
+		<description>Thie repository contains addons compiled / ported to devices based on Amlogic S905 AARCH64 devices running LibreELEC (may also work with OpenELEC). There is no guarantee these addons will work so USE AT YOUR OWN RISK</description>
+		<platform>all</platform>
+	</extension>
+</addon>
