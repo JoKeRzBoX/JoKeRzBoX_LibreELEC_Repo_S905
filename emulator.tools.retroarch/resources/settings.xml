@@ -2,37 +2,113 @@
 <settings>
 	<category label="General">
 		<setting label="How to handle Kodi when launching retroarch" type="lsep" />
-		<setting id="launch_method" label="" type="enum" default="0" values="Pause Kodi process (keeps it in mem) and resumes it after|Stop Kodi process (frees mem) and restart it after" />
+		<setting id="launch_method" label="" type="enum" default="1" values="Pause Kodi process (keeps it in mem) and resumes it after|Stop Kodi process (frees mem) and restart it after" />
  
                 <setting  type="lsep" />
                 <setting label="Scripts Permissions (try only if RectroArch does not launch)" type="lsep" />
 		<setting label="Click to fix permissions of scripts to make them executable" type="action" action="RunScript($CWD/makeExecutable.py)" />
+
+		<setting  type="lsep" />
+		<setting label="Ignore OS libs and use ones from [B][I]32bit Libs for RetroArch[/I][/B] addon" type="lsep" />
+		<setting label="[I](requires addon to be installed before you can enable this setting)[/I]" type="lsep" visible="! System.HasAddon(emulator.tools.32bitlibs)" />
+		<setting id="force_32bit_libs" label="Forcefully use libraries from [B][I]32bit Libs for RetroArch[/I][/B] addon" type="bool" default="false" enable="System.HasAddon(emulator.tools.32bitlibs)" />
+
  	</category>
         <category label="Configuration">
 
 		<setting label="Common RetroArch config can be set below. USE AT YOUR OWN RISK" type="lsep" />
-
+		
 		<setting  type="lsep" />
-                <setting label="Folder location for RetroArch files (will be created if do not exist)" type="lsep" />
+                <setting label="Folders for RetroArch files (will be created if do not exist)" type="lsep" />
                 <setting id="retroarch_system_folder" label="System files" type="folder" default="/storage/emulators/retroarch/system" option="writeable" />
                 <setting id="retroarch_screenshots_folder" label="Screenshots" type="folder" default="/storage/emulators/retroarch/screenshots" option="writeable" />
 
                 <setting  type="lsep" />
                 <setting label="Audio Settings" type="lsep" />
-                <setting id="retroarch_audio_out_rate" label="Audio Output Sample Rate" type="labelenum" values="48000|44100|22050" default="48000" /> 
-                <setting id="retroarch_audio_driver" label="Audio Driver" type="labelenum" values="alsa|sdl|alsathread" default="alsathread" />
+                <setting id="retroarch_audio_out_rate" label="Audio Output Sample Rate [default: 48000]" type="labelenum" values="48000|44100|22050" default="48000" /> 
+                <setting id="retroarch_audio_driver" label="Audio Driver [default: alsthread]" type="labelenum" values="alsathread|alsa|oss" default="alsathread" />
+                <setting id="retroarch_audio_device" label="Audio Device [default: hw:0,1]" type="labelenum" values="hw:0,1" default="hw:0,1" />
+				
 
                 <setting  type="lsep" />
                 <setting label="Video Settings" type="lsep" />
-                <setting id="retroarch_video_threaded" label="Process video in threads" type="labelenum" values="true|false"  default="true" />
+                <setting id="retroarch_video_threaded" label="Process video using threads [default: true]" type="labelenum" values="true|false"  default="true" />
 
                 <setting  type="lsep" />
                 <setting label="Other Settings" type="lsep" />
-                <setting id="retroarch_rewind_enable" label="Game rewind enabled (slows emulation)" type="labelenum" values="false|true" default="false" />
-                <setting id="retroarch_fps_show" label="Show frame per second on screen" type="labelenum" values="false|true" default="false" />
+                <setting id="retroarch_menu_driver" label="Menu UI to use [default: xmb]" type="labelenum" values="xmb|glui|rgui" default="xmb" />
+                <setting id="retroarch_rewind_enable" label="Enable game rewind (slows emulation) [default: false]" type="labelenum" values="false|true" default="false" />
+                <setting id="retroarch_fps_show" label="Show frame per second on screen [default: false]" type="labelenum" values="false|true" default="false" />
 
 
         </category>
+        <category label="Simple Launcher">
+		
+		<setting id="simple_launcher_enabled" label="Enable Simple ROM Launcher from this addon" type="bool" default="true" />
+		<setting label="If disabled, opening this addon will launch RetroArch menu" type="lsep" />
+		<setting type="sep" />
+		<setting label="Emulator Core 1" type="lsep" enable="eq(-3,true)" />
+                <setting id="core_1_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-4,true)" />
+				<setting id="core_1_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-5,true)" />
+
+		<setting label="Emulator Core 2" type="lsep" enable="eq(-6,true)" />
+                <setting id="core_2_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-7,true)" />
+				<setting id="core_2_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-8,true)" />
+
+		<setting label="Emulator Core 3" type="lsep" enable="eq(-9,true)" />
+                <setting id="core_3_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-10,true)" />
+				<setting id="core_3_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-11,true)" />
+
+		<setting label="Emulator Core 4" type="lsep" enable="eq(-12,true)" />
+                <setting id="core_4_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-13,true)" />
+				<setting id="core_4_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-14,true)" />
+
+		<setting label="Emulator Core 5" type="lsep" enable="eq(-15,true)" />
+                <setting id="core_5_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-16,true)" />
+				<setting id="core_5_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-17,true)" />
+
+		<setting label="Emulator Core 6" type="lsep" enable="eq(-18,true)" />
+                <setting id="core_6_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-19,true)" />
+				<setting id="core_6_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-20,true)" />
+
+		<setting label="Emulator Core 7" type="lsep" enable="eq(-21,true)" />
+                <setting id="core_7_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-22,true)" />
+				<setting id="core_7_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-23,true)" />
+
+		<setting label="Emulator Core 8" type="lsep" enable="eq(-24,true)" />
+                <setting id="core_8_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-25,true)" />
+				<setting id="core_8_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-26,true)" />
+
+		<setting label="Emulator Core 9" type="lsep" enable="eq(-27,true)" />
+                <setting id="core_9_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-28,true)" />
+				<setting id="core_9_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-29,true)" />
+
+		<setting label="Emulator Core 10" type="lsep" enable="eq(-30,true)" />
+                <setting id="core_10_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-31,true)" />
+				<setting id="core_10_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-32,true)" />
+
+		<setting label="Emulator Core 11" type="lsep" enable="eq(-33,true)" />
+                <setting id="core_11_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-34,true)" />
+				<setting id="core_11_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-35,true)" />
+
+		<setting label="Emulator Core 12" type="lsep" enable="eq(-36,true)" />
+                <setting id="core_12_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-37,true)" />
+				<setting id="core_12_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-38,true)" />
+
+		<setting label="Emulator Core 13" type="lsep" enable="eq(-39,true)" />
+                <setting id="core_13_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-40,true)" />
+				<setting id="core_13_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-41,true)" />
+
+		<setting label="Emulator Core 14" type="lsep" enable="eq(-42,true)" />
+                <setting id="core_14_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-43,true)" />
+				<setting id="core_14_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-44,true)" />
+
+		<setting label="Emulator Core 15" type="lsep" enable="eq(-45,true)" />
+                <setting id="core_15_lib" label="Emulator Library" type="select" source="lib/libretro/" mask="*.so" enable="eq(-46,true)" />
+				<setting id="core_15_folder" label="ROM Folder" type="folder"  source="auto" enable="eq(-47,true)" />
+
+
+	</category>
 
 </settings>
 

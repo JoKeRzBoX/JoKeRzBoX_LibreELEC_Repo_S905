@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="tools.compression.p7zip"
        name="compression.p7zip"
-       version="7.0.1"
+       version="7.0.1-j01"
        provider-name="JoKeRzBoX">
   <requires>
     <import addon="os.libreelec.tv" version="7.0"/>
     <import addon="xbmc.python" version="2.1.0"/>
 
   </requires>
-  <extension point="xbmc.service" library="default.py">
+  <extension point="xbmc.python.script" library="default.py">
     <provides></provides>
   </extension>
   <extension point="xbmc.addon.metadata">

@@ -26,6 +26,7 @@ RETROARCH_CONFIG_DIR="$ADDON_HOME/config"
 RETROARCH_CONFIG_FILE="$RETROARCH_CONFIG_DIR/retroarch.cfg"
 RETROARCH_SAVEFILES_DIR="$ADDON_HOME/savefiles"
 #RETROARCH_SYSTEM_DIR="$ADDON_HOME/system"
+LIBS32BIT_ADDON_DIR="$ADDON_DIR/../emulator.tools.32bitlibs"
 
 chmod a+x $ADDON_DIR/bin/*
 
@@ -55,57 +56,78 @@ fi
 if [ "$retroarch_screenshots_folder" != "" ]; then
 	RETROARCH_SYSTEM_DIR="$retroarch_screenshots_folder"
 fi
-if [ !-d "$RETROARCH_SYSTEM_DIR" ]; then
+if [ ! -d "$RETROARCH_SYSTEM_DIR" ]; then
 	mkdir -p "$RETROARCH_SYSTEM_DIR"
 fi
-if [ !-d "$RETROARCH_SCREENSHOTS_DIR" ]; then
+if [ ! -d "$RETROARCH_SCREENSHOTS_DIR" ]; then
 	mkdir -p "$RETROARCH_SCREENSHOTS_DIR"
 fi
-sed "s:system_directory[ ]*=.*:system_directory = \"$RETROARCH_SYSTEM_DIR\":" "$RETROARCH_CONFIG_FILE" > "$TMPFILE"
-sed "s:screenshot_directory[ ]*=.*:screenshot_directory = \"$RETROARCH_SCREENSHOTS_DIR\":" "$TMPFILE" > "$RETROARCH_CONFIG_FILE"
-rm -f "$TMPFILE"
+
+sed -i "s@system_directory[ ]*=.*@system_directory = \"$RETROARCH_SYSTEM_DIR\"@" "$RETROARCH_CONFIG_FILE" 
+sed -i "s@screenshot_directory[ ]*=.*@screenshot_directory = \"$RETROARCH_SCREENSHOTS_DIR\"@" "$RETROARCH_CONFIG_FILE"
 
 if [ "$retroarch_audio_out_rate" != "" ]; then
-	sed "s:audio_out_rate[ ]*=.*:audio_out_rate = \"$retroarch_audio_out_rate\":" "$RETROARCH_CONFIG_FILE" > "$TMPFILE"
-	cp "$TMPFILE" "$RETROARCH_CONFIG_FILE"
-	rm -f "$TMPFILE"
+	sed -i "s@audio_out_rate[ ]*=.*@audio_out_rate = \"$retroarch_audio_out_rate\"@" "$RETROARCH_CONFIG_FILE"
 fi
 
 if [ "$retroarch_audio_driver" != "" ]; then
-        sed "s:audio_driver[ ]*=.*:audio_driver = \"$retroarch_audio_driver\":" "$RETROARCH_CONFIG_FILE" > "$TMPFILE"
-        cp "$TMPFILE" "$RETROARCH_CONFIG_FILE"
-        rm -f "$TMPFILE"
+        sed -i "s@audio_driver[ ]*=.*@audio_driver = \"$retroarch_audio_driver\"@" "$RETROARCH_CONFIG_FILE"
+fi
+
+if [ "$retroarch_audio_device" != "" ]; then
+        sed -i "s@audio_device[ ]*=.*@audio_device = \"$retroarch_audio_device\"@" "$RETROARCH_CONFIG_FILE"
 fi
 
 if [ "$retroarch_video_threaded" != "" ]; then
-	sed "s:video_threaded[ ]*=.*:video_threaded = \"$retroarch_video_threaded\":" "$RETROARCH_CONFIG_FILE" > "$TMPFILE"
-	cp "$TMPFILE" "$RETROARCH_CONFIG_FILE"
-	rm -f "$TMPFILE"
+	sed -i "s@video_threaded[ ]*=.*@video_threaded = \"$retroarch_video_threaded\"@" "$RETROARCH_CONFIG_FILE"
+fi
+
+if [ "$retroarch_menu_driver" != "" ]; then
+        sed -i "s@menu_driver[ ]*=.*@menu_driver = \"$retroarch_menu_driver\"@" "$RETROARCH_CONFIG_FILE"
 fi
 
 if [ "$retroarch_rewind_enable" != "" ]; then
-	sed "s:rewind_enable[ ]*=.*:rewind_enable = \"$retroarch_rewind_enable\":" "$RETROARCH_CONFIG_FILE" > "$TMPFILE"
-	cp "$TMPFILE" "$RETROARCH_CONFIG_FILE"
-	rm -f "$TMPFILE"
+	sed -i "s@rewind_enable[ ]*=.*@rewind_enable = \"$retroarch_rewind_enable\"@" "$RETROARCH_CONFIG_FILE" 
 fi
 
 if [ "$retroarch_fps_show" != "" ]; then
-	sed "s:fps_show[ ]*=.*:fps_show = \"$retroarch_fps_show\":" "$RETROARCH_CONFIG_FILE" > "$TMPFILE"
-	cp "$TMPFILE" "$RETROARCH_CONFIG_FILE"
-	rm -f "$TMPFILE"
+	sed -i "s@fps_show[ ]*=.*@fps_show = \"$retroarch_fps_show\"@" "$RETROARCH_CONFIG_FILE" 
+fi
+### END of configuration changes
+
+# Determine if this system has required library /lib/ld-linux-armhf.so.3, and use that to define what binary to use
+if [ -f "/lib/ld-linux-armhf.so.3" ]; then
+	RETROARCH_EXE="$ADDON_DIR/bin/retroarch"
+else
+	RETROARCH_EXE="$ADDON_DIR/bin/retroarch_mod"
+	# to make sure we are on bin folder when we start the modified retroarch_mod
+	cd "$ADDON_DIR/bin"
 fi
 
-##
-
-
+if [ "$force_32bit_libs" == "true" ]; then
+	RETROARCH_EXE="$ADDON_DIR/bin/retroarch_mod"
+	LD_LIBRARY_PATH="$LIBS32BIT_ADDON_DIR/lib:$LD_LIBRARY_PATH"
+        # to make sure we are on bin folder when we start the modified retroarch_mod
+        cd "$ADDON_DIR/bin"
+else
+	LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$LIBS32BIT_ADDON_DIR/lib"
+fi
 
 if [ "$launch_method" -ne 0 ]; then
 	systemctl stop kodi
-	$ADDON_DIR/bin/retroarch -c $RETROARCH_CONFIG_FILE -L $ADDON_DIR/lib/libretro/$1_libretro.so "$2"
+	if [ "$2" != "" ]; then
+		$RETROARCH_EXE -c $RETROARCH_CONFIG_FILE -L $ADDON_DIR/lib/libretro/$1_libretro.so "$2"
+	else
+		$RETROARCH_EXE -c $RETROARCH_CONFIG_FILE --menu
+	fi
 	systemctl start kodi
 else
 	pgrep kodi.bin | xargs kill -SIGSTOP	
-	$ADDON_DIR/bin/retroarch -c $RETROARCH_CONFIG_FILE -L $ADDON_DIR/lib/libretro/$1_libretro.so "$2"
+	if [ "$2" != "" ]; then
+		$RETROARCH_EXE -c $RETROARCH_CONFIG_FILE -L $ADDON_DIR/lib/libretro/$1_libretro.so "$2"
+	else
+		$RETROARCH_EXE -c $RETROARCH_CONFIG_FILE --menu
+	fi
 	pgrep kodi.bin | xargs kill -SIGCONT	
 fi
 

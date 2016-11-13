@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="emulator.tools.retroarch"
        name="RetroArch"
-       version="7.0.2-j01"
+       version="7.0.2-j05"
        provider-name="libreelec.tv">
   <requires>
     <import addon="os.libreelec.tv" version="7.0"/>
     <import addon="xbmc.python" version="2.1.0"/>
 
   </requires>
-  <extension point="xbmc.python.script" library="default.py">
-    <provides></provides>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>executable</provides>
   </extension>
   <extension point="xbmc.addon.metadata">
-    <summary>Retroarch addon.</summary>
+    <summary>RetroArch addon. Provides binary/cores plus settings to help configure and launch it</summary>
     <description>
-Retroarch addon.
+RetroArch addon based on source modified by Lakka project. Provides binary and core libraries compiled for S805 ARM plus settings to help configure and launch it.
+
+[I][B]Note:[/B] to run on 64 bit ARM (AARCH64) such as S905(X), make sure linux kernel is compiled with option for running 32 bits binary and that addon "32bit Libs for RetroArch" (emulator.tools.32bitlibs) is installed.[/I]
     </description>
     <disclaimer>
 this is an unofficial addon. please don't ask for support in openelec forum / irc channel
@@ -22,3 +24,4 @@ this is an unofficial addon. please don't ask for support in openelec forum / ir
     <platform>all</platform>
   </extension>
 </addon>
+

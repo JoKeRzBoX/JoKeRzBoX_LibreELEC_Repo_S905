@@ -1,0 +1,4 @@
+
+[B]Version 7.0.2[/B]
+- Initial version using 32 bit arm libs from kszaq's S805 librelect builds
+
