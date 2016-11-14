@@ -44,7 +44,7 @@ this is an unofficial addon. please don't ask for support in openelec forum / ir
 
 <addon id="emulator.tools.32bitlibs"
        name="32bit Libs for RetroArch"
-       version="7.0.2-j01"
+       version="7.0.2-j02"
        provider-name="JoKeRzBoX">
   <requires>
     <import addon="os.libreelec.tv" version="7.0"/>
@@ -70,7 +70,7 @@ This is an unofficial addon. Please don't ask for support in LibreELEC/OpenELEC 
 
 <addon id="emulator.tools.retroarch"
        name="RetroArch"
-       version="7.0.2-j05"
+       version="7.0.2-j06"
        provider-name="libreelec.tv">
   <requires>
     <import addon="os.libreelec.tv" version="7.0"/>

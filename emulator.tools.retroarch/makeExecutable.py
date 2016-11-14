@@ -21,16 +21,23 @@ import xbmcaddon
 
 
 def makeFilesExecutable():
-	scriptPath = xbmc.translatePath(xbmcaddon.Addon(id = 'emulator.tools.retroarch').getAddonInfo('path'))
-	scriptPath = os.path.join(scriptPath, 'bin')
-	file1 = os.path.join(scriptPath, 'retroarch.sh')
-	file2 = os.path.join(scriptPath, 'retroarch.start')
-	file3 = os.path.join(scriptPath, 'retroarch')
+	scriptPathBin = xbmc.translatePath(xbmcaddon.Addon(id = 'emulator.tools.retroarch').getAddonInfo('path'))
+	scriptPathLib = scriptPathBin
+	scriptPathBin = os.path.join(scriptPathBin, 'bin')
+	scriptPathLib = os.path.join(scriptPathLib, 'lib')
+	file1 = os.path.join(scriptPathBin, 'retroarch.sh')
+	file2 = os.path.join(scriptPathBin, 'retroarch.start')
+	file3 = os.path.join(scriptPathBin, 'retroarch')
+	file4 = os.path.join(scriptPathBin, 'retroarch_mod')
+	file5 = os.path.join(scriptPathLib, 'ld-linux-armhf.so')
+
 
 	try:
 		os.chmod(file1, stat.S_IRWXU|stat.S_IRWXG|stat.S_IROTH|stat.S_IXOTH)
 		os.chmod(file2, stat.S_IRWXU|stat.S_IRWXG|stat.S_IROTH|stat.S_IXOTH)
 		os.chmod(file3, stat.S_IRWXU|stat.S_IRWXG|stat.S_IROTH|stat.S_IXOTH)
+		os.chmod(file4, stat.S_IRWXU|stat.S_IRWXG|stat.S_IROTH|stat.S_IXOTH)
+		os.chmod(file5, stat.S_IRWXU|stat.S_IRWXG|stat.S_IROTH|stat.S_IXOTH)
 		d = xbmcgui.Dialog()
 		d.ok('RetroArch', 'File permissions applied', 'scripts should now be executable')        
 	except:

@@ -1,3 +1,6 @@
+[B]Version 7.0.2-j06[/B]:
+- bug fixes on the feature introduced previous release to forcefully use libs from [B][I]32bit Libs for RetroArch[/I][/B] addon. Thanks to mwnn and albundy @ freaktab for testing v7.0.2-j05.
+
 [B]Version 7.0.2-j05[/B]:
 - Now it also contains some linux libraries that were newer in libreElec 7.9+ so the compiled binary and cores can still run. Thanks to user dharry @ freaktab for identifying the required libs. 
 - New setting to force it to use all dynamic libraries from addon [B][I]32bit Libs for RetroArch[/I][/B] (and ignore libraries from OS). Try this if you have a newer version of libreelec and retroarch does not work anymore.

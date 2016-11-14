@@ -95,19 +95,37 @@ if [ "$retroarch_fps_show" != "" ]; then
 fi
 ### END of configuration changes
 
+
+# Fixes problem with symbolic links on libs provided by "32 bits libs for RetroArch" addon (if installed)
+if [ -d "$LIBS32BIT_ADDON_DIR" ]; then
+	PREV_DIR=`pwd`
+	cd "$LIBS32BIT_ADDON_DIR/lib"
+	if [ ! -h "$LIBS32BIT_ADDON_DIR/lib/libEGL.so" ]; then
+		rm -f libEGL.so
+		ln -s libMali.so libEGL.so
+	fi
+	if [ ! -h "$LIBS32BIT_ADDON_DIR/lib/libGLESv2.so" ]; then
+		rm -f libGLESv2.so
+		ln -s libMali.so libGLESv2.so
+	fi
+	cd "$PREV_DIR"
+fi
+
 # Determine if this system has required library /lib/ld-linux-armhf.so.3, and use that to define what binary to use
 if [ -f "/lib/ld-linux-armhf.so.3" ]; then
 	RETROARCH_EXE="$ADDON_DIR/bin/retroarch"
 else
 	RETROARCH_EXE="$ADDON_DIR/bin/retroarch_mod"
-	# to make sure we are on bin folder when we start the modified retroarch_mod
+	# to make sure we are on bin folder when we start the modified retroarch_mod and interpreter can be executed
+	chmod 755 "$ADDON_DIR/lib/ld-linux-armhf.so"
 	cd "$ADDON_DIR/bin"
 fi
 
 if [ "$force_32bit_libs" == "true" ]; then
 	RETROARCH_EXE="$ADDON_DIR/bin/retroarch_mod"
 	LD_LIBRARY_PATH="$LIBS32BIT_ADDON_DIR/lib:$LD_LIBRARY_PATH"
-        # to make sure we are on bin folder when we start the modified retroarch_mod
+        # to make sure we are on bin folder when we start the modified retroarch_mod and interpreter can be executed
+	chmod 755 "$ADDON_DIR/lib/ld-linux-armhf.so"
         cd "$ADDON_DIR/bin"
 else
 	LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$LIBS32BIT_ADDON_DIR/lib"

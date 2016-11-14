@@ -1,0 +1,28 @@
+[B]Version 7.0.2-j06[/B]:
+- bug fixes on the feature introduced previous release to forcefully use libs from [B][I]32bit Libs for RetroArch[/I][/B] addon. Thanks to mwnn and albundy @ freaktab for testing v7.0.2-j05.
+
+[B]Version 7.0.2-j05[/B]:
+- Now it also contains some linux libraries that were newer in libreElec 7.9+ so the compiled binary and cores can still run. Thanks to user dharry @ freaktab for identifying the required libs. 
+- New setting to force it to use all dynamic libraries from addon [B][I]32bit Libs for RetroArch[/I][/B] (and ignore libraries from OS). Try this if you have a newer version of libreelec and retroarch does not work anymore.
+
+[B]Version 7.0.2-j04[/B]:
+- Fixed a bug in retroarch.start script.
+
+[B]Version 7.0.2-j03[/B]:
+- Added more configuration params.
+- Option to diable simple lancher (lanches RetroArch menu instead).
+
+[B]Version 7.0.2-j02[/B]:
+- Minor bug fixes
+- Merged retroarch.cfg from sammaz.
+
+[B]Version 7.0.2-j01[/B]
+- Modifications made by JoKeRzBoX:
+  - Added settings to addon so parameters can be modified via Kodi
+  - Updated scripts to apply settings from Kodi to OS and retroarch.cfg
+  - Binnaries udpated from Lakka project.
+  - Thanks to kszaq, sammaz and Lakka project
+
+[B]Version 7.0.2[/B]
+- Initial version compiled for LibreElec nd S805 (code from kszaq).
+
