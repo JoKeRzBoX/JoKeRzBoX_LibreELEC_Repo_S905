@@ -1,0 +1,216 @@
+maniac|Maniac Mansion
+zak|Zak McKracken and the Alien Mindbenders
+indy3|Indiana Jones and the Last Crusade
+loom|Loom
+pass|Passport to Adventure
+monkey|The Secret of Monkey Island
+monkey2|Monkey Island 2: LeChuck's Revenge
+atlantis|Indiana Jones and the Fate of Atlantis
+tentacle|Day of the Tentacle
+samnmax|Sam & Max Hit the Road
+ft|Full Throttle
+dig|The Dig
+comi|The Curse of Monkey Island
+lgop2|Leather Goddesses of Phobos 2
+manhole|The Manhole
+rtz|Return to Zork
+rodney|Rodney's Funscreen
+elvira1|Elvira - Mistress of the Dark
+elvira2|Elvira II - The Jaws of Cerberus
+pn|Personal Nightmare
+simon1|Simon the Sorcerer 1
+simon2|Simon the Sorcerer 2
+dimp|Simon the Sorcerer's Puzzle Pack - D.I.M.P.
+jumble|Simon the Sorcerer's Puzzle Pack - Jumble
+puzzle|Simon the Sorcerer's Puzzle Pack - NoPatience
+swampy|Simon the Sorcerer's Puzzle Pack - Swampy Adventures
+feeble|The Feeble Files
+waxworks|Waxworks
+bargon|Bargon Attack
+fascination|Fascination
+geisha|Geisha
+gob1|Gobliiins
+gob2|Gobliins 2
+gob3|Goblins 3
+lostintime|Lost in Time
+littlered|Once Upon A Time: Little Red Riding Hood
+bambou|Playtoons: Bambou le Sauveur de la Jungle
+woodruff|The Bizarre Adventures of Woodruff and the Schnibble
+urban|Urban Runner
+ween|Ween: The Prophecy
+sky|Beneath a Steel Sky
+sword1|Broken Sword: The Shadow of the Templars
+sword2|Broken Sword II: The Smoking Mirror
+lure|Lure of the Temptress
+bc|The Black Cauldron
+goldrush|Gold Rush!
+kq1|King's Quest I
+kq2|King's Quest II
+kq3|King's Quest III
+kq4|King's Quest IV
+lsl1|Leisure Suit Larry in the Land of the Lounge Lizards
+mixedup|Mixed-Up Mother Goose
+mh1|Manhunter 1: New York
+mh2|Manhunter 2: San Francisco
+pq1|Police Quest I: In Pursuit of the Death Angel
+sq1|Space Quest I: The Sarien Encounter
+sq2|Space Quest II: Vohaul's Revenge
+agi-fanmade|Fanmade Games
+mickey|Mickey's Space Adventure
+troll|Troll's Tale
+winnie|Winnie the Pooh in the Hundred Acre Wood
+castlebrain|Castle of Dr. Brain (EGA and VGA)
+iceman|Codename: ICEMAN
+camelot|Conquests of Camelot
+longbow|Conquests of the Longbow (EGA and VGA)
+ecoquest|EcoQuest: The Search for Cetus
+ecoquest2|EcoQuest 2: Lost Secret of the Rainforest
+freddypharkas|Freddy Pharkas: Frontier Pharmacist
+hoyle1|Hoyle's Book of Games 1
+hoyle2|Hoyle's Book of Games 2
+hoyle3|Hoyle's Book of Games 3 (EGA and VGA)
+hoyle4|Hoyle Classic Card Games
+jones|Jones in the Fast Lane
+kq1sci|King's Quest I (SCI remake)
+kq4sci|King's Quest IV (SCI version)
+kq5|King's Quest V (EGA and VGA)
+kq6|King's Quest VI (low and hi res)
+laurabow|Laura Bow: The Colonel's Bequest
+laurabow2|Laura Bow 2: The Dagger of Amon Ra
+lsl1sci|Leisure Suit Larry 1 (SCI remake) (EGA and VGA)
+lsl2|Leisure Suit Larry 2
+lsl3|Leisure Suit Larry 3
+lsl5|Leisure Suit Larry 5 (EGA and VGA)
+lsl6|Leisure Suit Larry 6 (low res)
+fairytales|Mixed-up Fairy Tales
+mothergoose|Mixed-up Mother Goose
+pepper|Pepper's Adventures in Time
+pq1sci|Police Quest 1 (SCI remake)
+pq2|Police Quest 2
+pq3|Police Quest 3 (EGA and VGA)
+qfg1|Quest for Glory 1/Hero's Quest
+qfg1vga|Quest for Glory 1 VGA remake
+qfg2|Quest for Glory 2
+qfg3|Quest for Glory 3
+slater|Slater & Charlie Go Camping
+sq1sci|Space Quest I (SCI remake) (EGA and VGA)
+sq3|Space Quest III
+sq4|Space Quest IV (EGA and VGA)
+sq5|Space Quest V
+islandbrain|The Island of Dr. Brain
+toltecs|3 Skulls of the Toltecs
+access|Amazon: Guardians of Eden
+bbvs|Beavis and Butt-head in Virtual Stupidity
+blueforce|Blue Force
+sword25|Broken Sword 2.5: The Return of the Templars
+tucker|Bud Tucker in Double Trouble
+chivalry|Chivalry is Not Dead
+cruise|Cruise for a Corpse
+dreamweb|DreamWeb
+dw|Discworld
+dw2|Discworld II - Missing presumed...!?
+draci|Dragon History
+drascula|Drascula: The Vampire Strikes Back
+eob|Eye of the Beholder
+eob2|Eye of the Beholder II: The Legend of Darkmoon
+queen|Flight of the Amazon Queen
+fw|Future Wars
+hopkins|Hopkins FBI
+hugo1|Hugo's House of Horrors
+hugo2|Hugo 2: Whodunit?
+hugo3|Hugo 3: Jungle of Doom
+ihnm|I Have No Mouth, and I Must Scream
+ite|Inherit the Earth: Quest for the Orb
+lol|Lands of Lore: The Throne of Chaos
+mortevielle|Mortville Manor
+myst|Myst
+myst|Myst: Masterpiece Edition
+nippon|Nippon Safes Inc.
+nebular|Rex Nebular and the Cosmic Gender Bender
+ringworld|Ringworld: Revenge Of The Patriarch
+ringworld2|Return to Ringworld
+sfinx|Sfinx
+soltys|Soltys
+pegasus|The Journeyman Project: Pegasus Prime
+lab|The Labyrinth of Time
+kyra1|The Legend of Kyrandia
+kyra2|The Legend of Kyrandia: Book Two: Hand of Fate
+kyra3|The Legend of Kyrandia: Book Three: Malcolm's Revenge
+scalpel|The Lost Files of Sherlock Holmes: The Case of the Serrated Scalpel
+rosetattoo|The Lost Files of Sherlock Holmes: The Case of the Rose Tattoo
+neverhood|The Neverhood
+t7g|The 7th Guest
+teenagent|TeenAgent
+toon|Toonstruck
+tony|Tony Tough and the Night of Roasted Moths
+touche|Touche: The Adventures of the Fifth Musketeer
+gnap|U.F.O.s / Gnap: Der Schurke aus dem All
+voyeur|Voyeur
+zgi|Zork: Grand Inquisitor
+znemesis|Zork Nemesis: The Forbidden Lands
+baseball|Backyard Baseball
+baseball2001|Backyard Baseball 2001
+baseball2003|Backyard Baseball 2003
+football|Backyard Football
+football2002|Backyard Football 2002
+brstorm|Bear Stormin'
+thinker1|Big Thinkers First Grade
+thinkerk|Big Thinkers Kindergarten
+Blues123Time|Blue's 123 Time Activities
+BluesABCTime|Blue's ABC Time Activities
+arttime|Blue's Art Time Activities
+BluesBirthday|Blue's Birthday Adventure
+readtime|Blue's Reading Time Activities
+BluesTreasureHunt|Blue's Treasure Hunt
+fbear|Fatty Bear's Birthday Surprise
+fbpack|Fatty Bear's Fun Pack
+freddi|Freddi Fish 1: The Case of the Missing Kelp Seeds
+freddi2|Freddi Fish 2: The Case of the Haunted Schoolhouse
+freddi3|Freddi Fish 3: The Case of the Stolen Conch Shell
+freddi4|Freddi Fish 4: The Case of the Hogfish Rustlers of Briny Gulch
+freddicove|Freddi Fish 5: The Case of the Creature of Coral Cove
+maze|Freddi Fish and Luther's Maze Madness
+water|Freddi Fish and Luther's Water Worries
+airport|Let's Explore the Airport with Buzzy
+farm|Let's Explore the Farm with Buzzy
+jungle|Let's Explore the Jungle with Buzzy
+pjgames|Pajama Sam: Games to Play on Any Day
+pajama|Pajama Sam 1: No Need to Hide When It's Dark Outside
+pajama2|Pajama Sam 2: Thunder and Lightning Aren't so Frightening
+pajama3|Pajama Sam 3: You Are What You Eat From Your Head to Your Feet
+lost|Pajama Sam's Lost & Found
+socks|Pajama Sam's Sock Works
+puttrace|Putt-Putt Enters the Race
+puttmoon|Putt-Putt Goes to the Moon
+puttcircus|Putt-Putt Joins the Circus
+puttputt|Putt-Putt Joins the Parade
+puttzoo|Putt-Putt Saves the Zoo
+putttime|Putt-Putt Travels Through Time
+balloon|Putt-Putt and Pep's Balloon-O-Rama
+dog|Putt-Putt and Pep's Dog on a Stick
+activity|Putt-Putt & Fatty Bear's Activity Pack
+funpack|Putt-Putt's Fun Pack
+spyfox|SPY Fox 1: Dry Cereal
+spyfox2|SPY Fox 2: Some Assembly Required
+spyozon|SPY Fox 3: Operation Ozone
+chase|SPY Fox in Cheese Chase
+mustard|SPY Fox in Hold the Mustard
+darby|Darby the Dragon
+gregory|Gregory and the Hot Air Balloon
+liam|Magic Tales: Liam Finds a Story
+princess|The Princess and the Crab
+sleepingcub|Sleeping Cub's Test of Courage
+tortoise|Aesop's Fables: The Tortoise and the Hare
+arthurbday|Arthur's Birthday
+arthur|Arthur's Teacher Trouble
+seussabc|Dr. Seuss's ABC
+greeneggs|Green Eggs and Ham
+harryhh|Harry and the Haunted House
+grandma|Just Grandma and Me
+lilmonster|Little Monster at School
+ruff|Ruff's Bone
+sheila|Sheila Rae, the Brave
+stellaluna|Stellaluna
+bearfight|The Berenstain Bears Get in a Fight
+beardark|The Berenstain Bears in the Dark
+newkid|The New Kid on the Block

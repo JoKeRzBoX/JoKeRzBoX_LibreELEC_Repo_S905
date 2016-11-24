@@ -4,6 +4,7 @@ import xbmc, xbmcgui, xbmcaddon, xbmcplugin
 ADDON_ID = 'emulator.tools.retroarch'
 CORE_LIB_POSTFIX="_libretro.so"
 BIN_FOLDER="bin"
+RES_FOLDER="resources"
 RETROARCH_EXEC="retroarch.sh"
 
 addon = xbmcaddon.Addon(id=ADDON_ID)
@@ -39,6 +40,26 @@ def getCoreNiceName(library_name):
 		    	     break
     return nice_name
 	
+def getScummNiceName(scumm_short_name):
+    d = {}
+    addon_dir = xbmc.translatePath( addon.getAddonInfo('path') )
+    if os.path.isfile(os.path.join(addon_dir,RES_FOLDER,"scumm_map.txt")):
+       with open(os.path.join(addon_dir,RES_FOLDER,"scumm_map.txt")) as f:
+          for line in f:
+              (key, val) = line.split("|")
+              d[key] = val
+    try:
+        if d[scumm_short_name.lower()]:
+            return d[scumm_short_name.lower()]
+        else:
+            return scumm_short_name
+    except:
+        pass
+    return scumm_short_name
+
+
+
+
 def getCoreName(library_name):
     return string.replace(library_name,CORE_LIB_POSTFIX,"")
 	

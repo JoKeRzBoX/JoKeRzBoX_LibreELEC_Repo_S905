@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="emulator.tools.retroarch"
        name="RetroArch"
-       version="7.0.2-j06"
+       version="7.0.2-j07"
        provider-name="libreelec.tv">
   <requires>
     <import addon="os.libreelec.tv" version="7.0"/>

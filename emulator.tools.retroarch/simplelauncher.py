@@ -124,18 +124,27 @@ def buildMenu(fanart=None, searchString='SEARCH'):
 def listGames(params, fanart=None, my_string=None):
     emu_core = params['c']
     roms_folder = params['f']
-    #pattern = ".*\..*"
     #pattern = ".*\.(jpg|png|JPG|PNG|txt|TXT|nfo|NFO)$"
     pattern = "^.*\.(?!jpg$|png$|JPG$|PNG$|txt$|TXT$|nfo$|NFO$).+$"
 	
-    #regexObj = re.compile(".*\.so")
-    for root, dirs, files in os.walk(roms_folder, topdown=False):
-        for file in filter(lambda x: re.match(pattern, x), files):
-            myParam = {}
-            myParam['c'] = emu_core
-            myParam['r'] = os.path.join(roms_folder,str(file))
-			
-            util.addMenuItem(util.removeExtensions(str(file)), util.makeLink(myParam), icon=util.findIcon(roms_folder,str(file)), thumbnail=None, folder=True, fanart=fanart)
+    for file in os.listdir(roms_folder):
+        if emu_core == "scummvm":
+            pattern = "^.*\.(exe|scum|scummvm|ap|sou|map|sm0|sm1|rsc|ims|dat|lfl|lec|blk|out|gme|voc|000|001|002|003|004|005|006|007|008|009|010|011|1|100|101|1C|455|512|(a)|ad|add|aif|ald|all|ang|ask|aud|avd|avi|b25c|babayaga|bak|bbm|bdf|bin|blb|brs|c00|cab|cat|cel|cfg|chk|clg|clm|clt|clu|cps|csc|cup|d64|dcp|dll|dmu|dnr|drv|dsk|dum|ega|egg|ex1|flac|fmc|fnt|fon|gjd|gmc|gra|grv|he0|he2|hep|hpf|hrs|ico|imd|img|in|ine|inf|ini|itk|la0|la1|lic|man|map|mdi|mdt|mhk|mid|mor|mpc|mpc|msg|mus|nib|nl|nut|obj|ogg|ovr|pak|pat|pcx|pe2|pic|pix|pkd|pmv|prc|prg|qa|raw|rbt|rec|res|rl2|rlb|rom|san|sav|scn|scr|seq|set|smk|smp|snd|sng|sound|sp|spr|stk|stk|str|syn|sys|sys16|tab|tex|tga|tlk|tmi|txt|v16|v56|vga|vmd|w32|wav|win|z|zfs)$"
+            if os.path.isdir(os.path.join(roms_folder,str(file))):
+                for file2 in os.listdir(os.path.join(roms_folder,str(file))):
+                    if re.match(pattern, file2): 
+                        myParam = {}
+                        myParam['c'] = emu_core
+                        myParam['r'] = os.path.join(roms_folder,str(file),str(file2))
+                        util.addMenuItem(util.getScummNiceName(str(file)), util.makeLink(myParam), icon=util.findIcon(roms_folder,str(file)), thumbnail=None, folder=True, fanart=fanart)
+                        break
+        else:
+            pattern = "^.*\.(?!jpg$|png$|JPG$|PNG$|txt$|TXT$|nfo$|NFO$).+$"
+            if re.match(pattern, file) and not os.path.isdir(os.path.join(roms_folder,str(file))):
+                myParam = {}
+                myParam['c'] = emu_core
+                myParam['r'] = os.path.join(roms_folder,str(file))
+                util.addMenuItem(util.removeExtensions(str(file)), util.makeLink(myParam), icon=util.findIcon(roms_folder,str(file)), thumbnail=None, folder=True, fanart=fanart)
 	
 
 def playGame(params):

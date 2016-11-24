@@ -1,3 +1,7 @@
+[B]Version 7.0.2-j07[/B]
+- Fixed simple launcher to handle scummvm games properly. To use this feature, make sure game is extracted into a subdirectory named as per "Game Short Name" from http://scummvm.org/compatibility
+- Added option to configure the audio device for values other than hw:0,1. Now you can chose among hw:0,0 hw:0,1 hw:0,2 and hw:0,3 (hw:0,1 is still the default value)
+
 [B]Version 7.0.2-j06[/B]:
 - bug fixes on the feature introduced previous release to forcefully use libs from [B][I]32bit Libs for RetroArch[/I][/B] addon. Thanks to mwnn and albundy @ freaktab for testing v7.0.2-j05.
 
