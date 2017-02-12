@@ -6,6 +6,7 @@ CORE_LIB_POSTFIX="_libretro.so"
 BIN_FOLDER="bin"
 RES_FOLDER="resources"
 RETROARCH_EXEC="retroarch.sh"
+TITLE="RetroArch"
 
 addon = xbmcaddon.Addon(id=ADDON_ID)
 
@@ -26,6 +27,17 @@ def runEmulator(core, rom_file):
 
 def getConfig(setting_name):
     return addon.getSetting(setting_name)
+
+def getCoreIcon(library_name):
+    icon_file = None
+    addon_dir = xbmc.translatePath( addon.getAddonInfo('path') )
+    icon_file = os.path.join(addon_dir, "lib", "libretro", removeExtensions(library_name) + ".png")
+    if not os.path.exists(icon_file):
+         icon_file = os.path.join(addon_dir, "lib", "libretro", removeExtensions(library_name) + ".jpg")
+         if not os.path.exists(icon_file):
+             icon_file = None
+    return (icon_file)
+
 
 def getCoreNiceName(library_name):
     nice_name = getCoreName(library_name)
@@ -225,4 +237,25 @@ def endListing():
     Signals the end of the menu listing
     """
     xbmcplugin.endOfDirectory(int(sys.argv[1]))
+
+def Progress(line1 = '', line2 = '', line3 = '', hide = False):
+    dp = xbmcgui.DialogProgress()
+    dp.create(TITLE, line1, line2, line3)
+    dp.update(0)
+
+    if hide:
+        try:
+            xbmc.sleep(250)
+            WINDOW_PROGRESS = xbmcgui.Window(10101)
+            CANCEL_BUTTON   = WINDOW_PROGRESS.getControl(10)
+            CANCEL_BUTTON.setVisible(False)
+        except:
+            pass
+
+    return dp
+def okDialog(line1 = '', line2 = ''):
+    d = xbmcgui.Dialog()
+    d.ok(TITLE, line1, line2)
+
+
 
