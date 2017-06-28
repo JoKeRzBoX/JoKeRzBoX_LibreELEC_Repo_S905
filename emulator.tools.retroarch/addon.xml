@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="emulator.tools.retroarch"
        name="RetroArch"
-       version="7.0.2-j08"
+       version="7.0.2-j09"
        provider-name="libreelec.tv">
   <requires>
     <import addon="os.libreelec.tv" version="7.0"/>
@@ -16,7 +16,8 @@
     <description>
 RetroArch addon based on source modified by Lakka project. Provides binary and core libraries compiled for S805 ARM plus settings to help configure and launch it.
 
-[I][B]Note:[/B] to run on 64 bit ARM (AARCH64) such as S905(X), make sure linux kernel is compiled with option for running 32 bits binary and that addon "32bit Libs for RetroArch" (emulator.tools.32bitlibs) is installed.[/I]
+[I][B]Note:[/B] to run on 64 bit ARM (AARCH64) such as S905(X) compiled with 64 bits userspace (which is not the case for most S905(X) LE builds out there), make sure linux kernel is compiled with option for running 32 bits binary and that addon "32bit Libs for RetroArch" (emulator.tools.32bitlibs) is installed.[/I]
+ 
     </description>
     <disclaimer>
 this is an unofficial addon. please don't ask for support in openelec forum / irc channel

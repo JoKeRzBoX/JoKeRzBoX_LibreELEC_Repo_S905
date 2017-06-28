@@ -1,0 +1,41 @@
+[B]Version 7.0.2-j09[/B]
+- Updated Retroarch binary, libreto cores and assets from latest Lakka libreelec package 2.1-rc2. On this version there are many more supported emulation cores.
+- Modfied the default value for "Audio Device" in the addon settings to be "hw:0,0" as this seems to be the default with recent LE 8.x builds. The actual value used can still be set in the addon settings for any of the following: "hw:0,0", "hw:0,1", "hw:0,2" and "hw:0,3".
+
+[B]Version 7.0.2-j08[/B]
+- Updated RetroArch binary and libretro cores from latest nighty compilations from Lakka project (2016-12-21). This adds glupen64 as a new core.
+- Added an extra core reported as working by users: mame4all.  
+- Small fixes to very simple launcher: list of roms ordered alphabetically, better error handling when folder is inexistent, shows icon for cores
+
+[B]Version 7.0.2-j07[/B]
+- Fixed simple launcher to handle scummvm games properly. To use this feature, make sure game is extracted into a subdirectory named as per "Game Short Name" from http://scummvm.org/compatibility
+- Added option to configure the audio device for values other than hw:0,1. Now you can chose among hw:0,0 hw:0,1 hw:0,2 and hw:0,3 (hw:0,1 is still the default value)
+
+[B]Version 7.0.2-j06[/B]:
+- bug fixes on the feature introduced previous release to forcefully use libs from [B][I]32bit Libs for RetroArch[/I][/B] addon. Thanks to mwnn and albundy @ freaktab for testing v7.0.2-j05.
+
+[B]Version 7.0.2-j05[/B]:
+- Now it also contains some linux libraries that were newer in libreElec 7.9+ so the compiled binary and cores can still run. Thanks to user dharry @ freaktab for identifying the required libs. 
+- New setting to force it to use all dynamic libraries from addon [B][I]32bit Libs for RetroArch[/I][/B] (and ignore libraries from OS). Try this if you have a newer version of libreelec and retroarch does not work anymore.
+
+[B]Version 7.0.2-j04[/B]:
+- Fixed a bug in retroarch.start script.
+
+[B]Version 7.0.2-j03[/B]:
+- Added more configuration params.
+- Option to diable simple lancher (lanches RetroArch menu instead).
+
+[B]Version 7.0.2-j02[/B]:
+- Minor bug fixes
+- Merged retroarch.cfg from sammaz.
+
+[B]Version 7.0.2-j01[/B]
+- Modifications made by JoKeRzBoX:
+  - Added settings to addon so parameters can be modified via Kodi
+  - Updated scripts to apply settings from Kodi to OS and retroarch.cfg
+  - Binnaries udpated from Lakka project.
+  - Thanks to kszaq, sammaz and Lakka project
+
+[B]Version 7.0.2[/B]
+- Initial version compiled for LibreElec nd S805 (code from kszaq).
+

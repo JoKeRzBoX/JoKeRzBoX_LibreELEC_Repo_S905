@@ -1,3 +1,8 @@
+[B]Version 7.0.2-j09[/B]
+- Updated Retroarch binary, libreto cores and assets from latest Lakka libreelec package 2.1-rc2. On this version there are many more supported emulation cores.
+- Modified the default value for "Audio Device" in the addon settings to be "hw:0,0" as this seems to be the default with recent LE 8.x builds. The actual value used can still be set in the addon settings for any of the following: "hw:0,0", "hw:0,1", "hw:0,2" and "hw:0,3".
+- Removed old libs and less important asset files (wallpapers and icons) to reduce overall size of the addon package
+
 [B]Version 7.0.2-j08[/B]
 - Updated RetroArch binary and libretro cores from latest nighty compilations from Lakka project (2016-12-21). This adds glupen64 as a new core.
 - Added an extra core reported as working by users: mame4all.  

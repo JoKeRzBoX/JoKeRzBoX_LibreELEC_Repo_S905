@@ -27,7 +27,7 @@
                 <setting label="Audio Settings" type="lsep" />
                 <setting id="retroarch_audio_out_rate" label="Audio Output Sample Rate [default: 48000]" type="labelenum" values="48000|44100|22050" default="48000" /> 
                 <setting id="retroarch_audio_driver" label="Audio Driver [default: alsthread]" type="labelenum" values="alsathread|alsa|oss" default="alsathread" />
-                <setting id="retroarch_audio_device" label="Audio Device [default: hw:0,1]" type="labelenum" values="hw:0,0|hw:0,1|hw:0,2|hw:0,3" default="hw:0,1" />
+                <setting id="retroarch_audio_device" label="Audio Device [default: hw:0,0]" type="labelenum" values="hw:0,0|hw:0,1|hw:0,2|hw:0,3" default="hw:0,0" />
 				
 
                 <setting  type="lsep" />
