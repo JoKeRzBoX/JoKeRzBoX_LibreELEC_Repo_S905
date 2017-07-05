@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="emulator.tools.32bitlibs"
        name="32bit Libs for RetroArch"
-       version="7.0.2-j02"
+       version="7.0.2-j03"
        provider-name="JoKeRzBoX">
   <requires>
     <import addon="os.libreelec.tv" version="7.0"/>

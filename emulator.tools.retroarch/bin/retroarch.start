@@ -54,7 +54,7 @@ if [ "$retroarch_system_folder" != "" ]; then
 	RETROARCH_SYSTEM_DIR="$retroarch_system_folder"
 fi
 if [ "$retroarch_screenshots_folder" != "" ]; then
-	RETROARCH_SYSTEM_DIR="$retroarch_screenshots_folder"
+	RETROARCH_SCREENSHOTS_DIR="$retroarch_screenshots_folder"
 fi
 if [ ! -d "$RETROARCH_SYSTEM_DIR" ]; then
 	mkdir -p "$RETROARCH_SYSTEM_DIR"

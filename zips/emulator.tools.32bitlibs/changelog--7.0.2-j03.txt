@@ -1,0 +1,9 @@
+[B]Version 7.0.2-j03[/B]
+- Updated library libstdc++.so.6 to support GLIBCXX_3.4.22.
+
+[B]Version 7.0.2-j02[/B]
+- Corrected files libEGL.so and libGLESv2.so to be symbolic links to libMali.so (strangely required for GL to work). Thanks to mwnn and albundy @ freaktab for testing v7.0.2-j05.
+
+[B]Version 7.0.2-j01[/B]
+- Initial version using 32 bit arm libs from kszaq's S805 librelect builds
+
